@@ -579,7 +579,7 @@ def setup_gradio():
             def wrapped(*args, **kwargs):
                 return return_value
             return wrapped
-        gradio.utils.get_package_version = noop(gradio.utils.get_package_version)
+        #gradio.utils.get_package_version = noop(gradio.utils.get_package_version)
         
         gradio.analytics.initiated_analytics = noop(
             gradio.analytics.initiated_analytics)
@@ -771,7 +771,7 @@ def setup_gradio():
                 with gr.Row():
                     with gr.Column():
                         audio_in = gr.Files(
-                            type="filepath", label="Audio Input", file_types=["audio"])
+                            type="file", label="Audio Input", file_types=["audio"])
                         import_voice_name = gr.Textbox(label="Voice Name")
                         import_voice_button = gr.Button(value="Import Voice")
                     with gr.Column(visible=False) as col:

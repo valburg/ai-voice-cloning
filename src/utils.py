@@ -3794,7 +3794,7 @@ def unload_tts():
 def reload_tts():
 	in_docker = os.environ.get("IN_DOCKER", "false")
 	if in_docker == "false":
-		subprocess.Popen(["start.bat"])
+		subprocess.Popen(["bash", "start.sh"])
 	with open("reload_flag.txt", "w") as f:
 		f.write("reload")
 	os.kill(os.getpid(), signal.SIGTERM)  # Or signal.SIGKILL for an even harder kill
